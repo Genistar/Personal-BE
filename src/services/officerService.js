@@ -298,6 +298,8 @@ let updateOfficer = (data, file) => {
                     officer.cong_viec_chinh = data.cong_viec_chinh;
                     officer.nang_luc_so_truong_nk = data.nang_luc_so_truong_nk;
                     officer.ngay_vao_dang_chinh_thuc = data.ngay_vao_dang_chinh_thuc;
+                    officer.ngay_vao_dang = data.ngay_vao_dang;
+                    officer.ngay_vao_doan = data.ngay_vao_doan;
                     officer.ngay_xuat_ngu = data.ngay_xuat_ngu;
                     officer.ngay_nhap_ngu = data.ngay_nhap_ngu;
                     officer.quan_ham_cao_nhat = data.quan_ham_cao_nhat;
