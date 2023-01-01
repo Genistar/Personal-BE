@@ -1,4 +1,5 @@
 var db = require('../models/index');
+var jwt = require('jsonwebtoken')
 const bcrypt = require('bcryptjs/dist/bcrypt');
 var salt = bcrypt.genSaltSync(10);
 let checkUserEmail = (username) => {
@@ -46,8 +47,10 @@ let userLogin = (username, password) => {
                 if (user) {
                     let check = await bcrypt.compareSync(password, user.password);
                     if (check) {
+                        const accessToken = jwt.sign({ username: username }, process.env.ACCESS_TOKEN_SECRET)
                         userData.errCode = 0;
                         userData.errMessage = 'OK';
+                        userData.token = accessToken
                         delete user.password;
                         userData.user = user;
                     }

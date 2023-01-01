@@ -1,6 +1,7 @@
 var express = require('express');
 import officerController from '../../controllers/officerController';
 import userController from '../../controllers/userController';
+import authToken from '../../middleware/auth';
 
 let router = express.Router();
 

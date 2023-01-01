@@ -33,7 +33,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(imageUpload.single('hinh_anh'))
 app.use(express.static('src'));
-app.use(cors())
+app.use(cors());
 
 
 initWebRoutes(app);
@@ -56,6 +56,7 @@ hopDongRoutes(app);
 contractDRoutes(app);
 contractUserRoutes(app);
 familyRoutes(app);
+
 
 connectDB();
 var port = process.env.PORT || 9696;
