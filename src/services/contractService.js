@@ -113,14 +113,15 @@ let createNewContract = (data) => {
                         errCode: 2,
                         errMessage: 'Cán bộ này đã có hợp đồng'
                     })
-                } else if (data.benADienThoai.match(/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im)) {
+                } else if (/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(data.benADienThoai) !== true) {
                     resolve({
                         errCode: 3,
                         errMessage: 'Số điện thoại không hợp lệ'
                     })
                 } else {
                     await db.Hop_dong_lao_dong.create({
-                        benA: data.benAQuocTich,
+                        benA: data.benA,
+                        benAQuocTich: data.benAQuocTich,
                         benAChucVu: data.benAChucVu,
                         benADienThoai: data.benADienThoai,
                         benADaiDienCho: data.benADaiDienCho,
@@ -164,7 +165,8 @@ let createNewContract = (data) => {
                         canCu2: data.canCu2,
                         huongKhoanThuong: data.huongKhoanThuong,
                         bhytHDLV: data.bhytHDLV,
-                        donViLamViecIn: data.donViLam
+                        donViLamViecIn: data.donViLam,
+                        giaHan: data.giaHan
                     })
                     resolve({
                         errCode: 0,
@@ -199,7 +201,8 @@ let updateContract = (data) => {
                     raw: false
                 })
                 if (contract) {
-                    contract.benA = data.benAQuocTich;
+                    contract.benA = data.benA;
+                    contract.benAQuocTich = data.benAQuocTich;
                     contract.benAChucVu = data.benAChucVu;
                     contract.benADienThoai = data.benADienThoai;
                     contract.benADaiDienCho = data.benADaiDienCho;

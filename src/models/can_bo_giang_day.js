@@ -18,10 +18,12 @@ module.exports = (sequelize, DataTypes) => {
             Can_bo_giang_day.belongsTo(models.Loai_can_bo, { foreignKey: 'fk_loai_can_bo' })
             Can_bo_giang_day.belongsTo(models.Chuc_vu, { foreignKey: 'fk_chuc_vu' })
             Can_bo_giang_day.belongsTo(models.Nganh, { foreignKey: 'fk_nganh' })
-            Can_bo_giang_day.hasOne(models.User, { foreignKey: 'cbId' })
+            Can_bo_giang_day.hasOne(models.User, { foreignKey: 'cbId', hooks: true })
+            Can_bo_giang_day.hasOne(models.Boi_duong, { foreignKey: 'fkMaCanBo', hooks: true })
             Can_bo_giang_day.hasOne(models.Dairy, { foreignKey: 'fkMaCanBo' })
             Can_bo_giang_day.hasOne(models.Qhe_gia_dinh, { foreignKey: 'fkMaCanBo' })
             Can_bo_giang_day.hasOne(models.Hop_dong_lao_dong, { foreignKey: 'BenB' })
+
         }
     };
     Can_bo_giang_day.init({

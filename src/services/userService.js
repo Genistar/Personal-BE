@@ -206,10 +206,11 @@ let deleteUser = (id) => {
                 })
             }
             else {
-                await db.user.destroy({
+                await db.User.destroy({
                     where: {
                         id: id
-                    }
+                    },
+                    individualHooks: true
                 })
                 resolve({
                     errCode: 0,

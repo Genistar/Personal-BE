@@ -118,7 +118,7 @@ let createNewOfficer = (data, file) => {
                     errCode: 4,
                     errMessage: 'Không nhập đầy đủ',
                 })
-            } else if (/^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/im.test(data.dien_thoai) !== true) {
+            } else if (/^[+]*[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$/g.test(data.dien_thoai) !== true) {
                 resolve({
                     errCode: 5,
                     errMessage: 'Không đúng định dạng số điện thoại',
