@@ -11,6 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       User.belongsTo(models.Can_bo_giang_day, { foreignKey: 'cbId', hooks: true })
+      User.belongsTo(models.Vai_tro, { foreignKey: 'role', hooks: true })
     }
   };
   User.init({

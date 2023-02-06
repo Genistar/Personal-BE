@@ -148,7 +148,6 @@ let createNewOfficer = (data, file) => {
                     })
                 } else {
                     await db.Can_bo_giang_day.create({
-                        //Thông tin cơ bản
                         id: data.id,
                         ho: data.ho,
                         ten: data.ten,

@@ -56,8 +56,7 @@ let getBusinessById = (id) => {
 let createNewBusiness = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            if (!data.thoiGianCT || !data.chucDanh || !data.chucDanh || !data.donViCT || !data.chuyenMon
-                || !data.fkMaCanBo) {
+            if (!data.thoiGianCT || !data.chucDanh || !data.donViCT || !data.chuyenMon || !data.fkMaCanBo) {
                 resolve({
                     errCode: 1,
                     errMessage: 'Chưa nhập đầy đủ thông tin !!'
@@ -87,7 +86,7 @@ let createNewBusiness = (data) => {
 let updateBusiness = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            if (!data.thoiGianCT || !data.chucDanh || !data.chucDanh || !data.donViCT || !data.chuyenMon
+            if (!data.thoiGianCT || !data.chucDanh || !data.donViCT || !data.chuyenMon
                 || !data.fkMaCanBo) {
                 resolve({
                     errCode: 1,

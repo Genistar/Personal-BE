@@ -62,7 +62,7 @@ let getCultivationById = (id) => {
 let createNewCultivation = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            if (!data.noiBoiDuong || !data.boiDuongTuNgay || !data.boiDuongDenNgay || !data.fkMaHinhThucBD || !data.noiDungBoiDuong
+            if (!data.noiBoiDuong || !data.boiDuongTuNgay || !data.boiDuongDenNgay || !data.fkMaHinhThucBD
                 || !data.fkMaCanBo || !data.chungChiBoiDuong) {
                 resolve({
                     errCode: 1,

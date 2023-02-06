@@ -22,7 +22,8 @@ const dailyRoutes = require('./routes/nhat_ky');
 const accountRoutes = require('./routes/admin/account');
 const hopDongRoutes = require('./routes/admin/hop_dong_can_bo');
 const contractUserRoutes = require('./routes/user/contract');
-const familyRoutes = require('./routes/user/family')
+const familyRoutes = require('./routes/user/family');
+const roleRoutes = require('./routes/admin/vai_tro')
 require('dotenv').config();
 
 let app = express();
@@ -56,6 +57,7 @@ hopDongRoutes(app);
 contractDRoutes(app);
 contractUserRoutes(app);
 familyRoutes(app);
+roleRoutes(app);
 
 
 connectDB();

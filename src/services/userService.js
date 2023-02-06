@@ -79,7 +79,8 @@ let getAllUser = () => {
         try {
             let data = await db.User.findAll({
                 include: [
-                    { model: db.Can_bo_giang_day }
+                    { model: db.Can_bo_giang_day },
+                    { model: db.Vai_tro }
                 ],
                 raw: true,
                 nest: true
@@ -102,7 +103,8 @@ let getUser = (id) => {
                     id: id
                 },
                 include: [
-                    { model: db.Can_bo_giang_day }
+                    { model: db.Can_bo_giang_day },
+                    { model: db.Vai_tro }
                 ],
                 raw: true,
                 nest: true

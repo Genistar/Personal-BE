@@ -50,7 +50,7 @@ let getDisciplineById = (id) => {
 let createNewDiscipline = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            if (!data.namBiKyLuat || !data.namXoaHieuLucKyLuat || !data.coQuan || !data.coQuanKhac
+            if (!data.namBiKyLuat || !data.namXoaHieuLucKyLuat || !data.coQuan
                 || !data.soThangBiKyLuat || !data.soCongVan || !data.fkMaCanBo) {
                 resolve({
                     errCode: 1,
@@ -82,7 +82,7 @@ let createNewDiscipline = (data) => {
 let updateDiscipline = (data) => {
     return new Promise(async (resolve, reject) => {
         try {
-            if (!data.namBiKyLuat || !data.namXoaHieuLucKyLuat || !data.coQuan || !data.coQuanKhac
+            if (!data.namBiKyLuat || !data.namXoaHieuLucKyLuat || !data.coQuan
                 || !data.soThangBiKyLuat || !data.soCongVan || !data.fkMaCanBo) {
                 resolve({
                     errCode: 1,
